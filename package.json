@@ -1,12 +1,11 @@
 {
-  "name": "day2-assignment",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start:dev": "npx nodemon",
     "test": "mocha --require ts-node/register ./src/test/app.test.ts",
-    "build": "tsc"
+   "build": "npm install && npx tsc"
   },
   "author": "",
   "license": "ISC",
