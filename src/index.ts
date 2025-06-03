@@ -15,7 +15,7 @@ app.use(cookieParser());
 const path = require("path");
 const port = "4000";
 
-const DBUrl = "mongodb://0.0.0.0:27017/Node";
+const DBUrl = "mongodb+srv://sakshijha882:EDMcehH9R1qflTau@cluster0.sydynrf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
   .connect(DBUrl)
