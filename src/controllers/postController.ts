@@ -17,7 +17,6 @@ export const postImage = async (req: Request, res: Response) => {
     let data = req.body;
     const file: any = req.file;
     const upload = await cloudinary.uploader.upload(file?.path);
-
     let postData = await postModel.create({
       title: data.title,
       description: data.description,

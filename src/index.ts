@@ -18,7 +18,8 @@ const port = "4000";
 const DBUrl = "mongodb+srv://sakshijha882:EDMcehH9R1qflTau@cluster0.sydynrf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
-  .connect(DBUrl)
+  .connect(DBUrl, { useNewUrlParser: true,
+    useUnifiedTopology: true,})
   .then(function () {
     console.log(" db connected");
   })
@@ -35,7 +36,7 @@ app.get("/", (req, res) => {
 
 app.use(express.json());
 
-app.use("/user", userRouter, postRouter);
+app.use("/user", userRouter);
 app.use("/posts", upload.single("image"), postRouter);
 app.use("/imageurl", protectRoute, upload.single("image"), imageHandler);
 app.use("/showcomment/:postid", getComment);
